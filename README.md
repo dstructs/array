@@ -33,14 +33,10 @@ var arr = array( 4 );
 If `x` is a generic `array` or [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays), the function [casts](https://github.com/compute-io/cast-arrays) the input array to `float64`.
 
 ``` javascript
-var d = new Int8Array( 4 );
-
-arr = array( d );
+var arr = array( new Int8Array( 4 ) );
 // returns Float64Array( [0,0,0,0] )
 
-d = [ 10, 20, 30, 40, 50, 60 ];
-
-arr = array( d );
+arr = array( [ 10, 20, 30, 40, 50, 60 ] );
 // returns Float64Array( [10,20,30,40,50,60] )
 ```
 
