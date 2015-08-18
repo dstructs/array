@@ -50,7 +50,7 @@
     "validate.io-number-primitive": "^1.0.0"
   },
   "devDependencies": {
-    "chai": "2.x.x",
+    "chai": "3.x.x",
     "codecov.io": "^0.1.5",
     "istanbul": "^0.3.0",
     "jshint": "2.x.x",
