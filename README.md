@@ -33,11 +33,11 @@ var arr = array( 4 );
 If `x` is a generic `array` or [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays), the function [casts](https://github.com/compute-io/cast-arrays) the input array to `float64`.
 
 ``` javascript
-var arr = array( new Int8Array( 4 ) );
-// returns Float64Array( [0,0,0,0] )
-
-arr = array( [ 10, 20, 30, 40, 50, 60 ] );
+var arr = array( [ 10, 20, 30, 40, 50, 60 ] );
 // returns Float64Array( [10,20,30,40,50,60] )
+
+arr = array( new Int8Array( 4 ) );
+// returns Float64Array( [0,0,0,0] )
 ```
 
 By default, output `array` elements are floating-point 64-bit numbers (`float64`). To specify a different data type, provide a `dtype`.
