@@ -11,7 +11,7 @@ Array
 $ npm install dstructs-array
 ```
 
-For use in the browser, use [browserify](https://github.com/substack/node-browserify).
+For use in the browser, use [browserify][browserify].
 
 
 ## Usage
@@ -30,7 +30,7 @@ var arr = array( 4 );
 // returns Float64Array( [0,0,0,0] )
 ```
 
-If `x` is a generic `array` or [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays), the function [casts](https://github.com/compute-io/cast-arrays) the input array to `float64`.
+If `x` is a generic `array` or [`typed array`][typed-array], the function [casts][dstructs-cast-arrays] the input array to `float64`.
 
 ``` javascript
 var arr = array( [ 10, 20, 30, 40, 50, 60 ] );
@@ -47,7 +47,7 @@ var arr = array( 4, 'int8' );
 // returns Int8Array( [0,0,0,0] )
 ```
 
-The following [`dtypes`](https://github.com/compute-io/array-constructors) are accepted:
+The following [`dtypes`][dstructs-array-constructors] are accepted:
 
 *	`int8`
 *	`uint8`
@@ -144,7 +144,7 @@ $ node ./examples/index.js
 
 ### Unit
 
-Unit tests use the [Mocha](http://mochajs.org/) test framework with [Chai](http://chaijs.com) assertions. To run the tests, execute the following command in the top-level application directory:
+Unit tests use the [Mocha][mocha] test framework with [Chai][chai] assertions. To run the tests, execute the following command in the top-level application directory:
 
 ``` bash
 $ make test
@@ -155,7 +155,7 @@ All new feature development should have corresponding unit tests to validate cor
 
 ### Test Coverage
 
-This repository uses [Istanbul](https://github.com/gotwarlost/istanbul) as its code coverage tool. To generate a test coverage report, execute the following command in the top-level application directory:
+This repository uses [Istanbul][istanbul] as its code coverage tool. To generate a test coverage report, execute the following command in the top-level application directory:
 
 ``` bash
 $ make test-cov
@@ -196,3 +196,12 @@ Copyright &copy; 2015. The [Compute.io](https://github.com/compute-io) Authors.
 
 [github-issues-image]: http://img.shields.io/github/issues/dstructs/array.svg
 [github-issues-url]: https://github.com/dstructs/array/issues
+
+[mocha]: http://mochajs.org/
+[chai]: http://chaijs.com
+[istanbul]: https://github.com/gotwarlost/istanbul
+
+[browserify]: https://github.com/substack/node-browserify
+[typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays
+[dstructs-cast-arrays]: https://github.com/dstructs/cast-arrays
+[dstructs-array-constructors]: https://github.com/dstructs/array-constructors
