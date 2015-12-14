@@ -3,14 +3,14 @@
 
 // MODULES //
 
-var chai = require( 'chai' ),
-	array = require( './../lib/array.js' );
+var chai = require( 'chai' );
+var array = require( './../lib/array.js' );
 
 
 // VARIABLES //
 
-var expect = chai.expect,
-	assert = chai.assert;
+var expect = chai.expect;
+var assert = chai.assert;
 
 
 // TESTS //
@@ -134,9 +134,9 @@ describe( 'array', function tests() {
 	});
 
 	it( 'should cast an input array to a specified type', function test() {
-		var expected,
-			arr,
-			i;
+		var expected;
+		var arr;
+		var i;
 
 		arr = array( new Int8Array( 10 ), 'uint16' );
 		assert.strictEqual( arr.constructor.name, 'Uint16Array' );
@@ -167,7 +167,8 @@ describe( 'array', function tests() {
 	});
 
 	it( 'should cast a plain array to a float64', function test() {
-		var out, arr;
+		var out;
+		var arr;
 
 		arr = new Array(1,2,3,4,5,6);
 		out = array( arr );

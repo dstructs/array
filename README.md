@@ -95,8 +95,8 @@ arr = array.raw( new Float32Array( [1,2,3,4] ) );
 ## Examples
 
 ``` javascript
-var array = require( 'dstructs-array' ),
-	len = 10;
+var array = require( 'dstructs-array' );
+var len = 10;
 
 // Default array:
 console.log( array( len ) );

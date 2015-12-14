@@ -1,7 +1,7 @@
 'use strict';
 
-var array = require( './../lib' ),
-	len = 10;
+var array = require( './../lib' );
+var len = 10;
 
 // Default array:
 console.log( array( len ) );
