@@ -8,4 +8,6 @@ TODO
 	-	would allow creating a "sparse" vector
 	-	need to create a `length` property
 	-	would `length` be dynamic (`Array`) or fixed (`typed-array`)?
-4. 
+4. `toString()`
+	-	consider using either `;` or `,` as the delimiter to distinguish between row and column vectors
+5. 
