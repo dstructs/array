@@ -11,4 +11,5 @@ TODO
 4. `toString()`
 	-	consider using either `;` or `,` as the delimiter to distinguish between row and column vectors
 5. handle generic `arrays` being pre-allocated with `>64K` elements
-6. 
+6. instead of `DataArray`, consider `Vector`
+7. 
