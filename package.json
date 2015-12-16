@@ -47,7 +47,6 @@
     "dstructs-array-constructors": "^1.0.2",
     "dstructs-array-dtype": "^1.0.2",
     "dstructs-cast-arrays": "^1.0.3",
-    "type-name": "^1.1.0",
     "utils-copy": "^1.0.0",
     "validate.io-array-like": "^1.0.1",
     "validate.io-nonnegative-integer": "^1.0.0",
