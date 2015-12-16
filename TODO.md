@@ -22,4 +22,10 @@ TODO
 	-	internally, we would just update the shape `array`
 	-	is this important? needed? Probably not computationally. Just for output (?).
 	-	maybe allow an input parameter to `toString()` / pretty-print to show as row or column vector
-9. 
+9. add raw and non-raw constructors to main export
+	-	maybe (?)
+	-	only if `class` support
+10. tests for individual files
+11. port methods from `matrix`
+12. update README
+13. 
