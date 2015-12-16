@@ -22,15 +22,27 @@ describe( 'array (raw)', function tests() {
 	});
 
 	it( 'should return a new array instance if provided a length', function test() {
+		var expected;
 		var arr;
+		var i;
 
 		arr = array( 1 );
 		assert.isTrue( arr instanceof Float64Array );
-		assert.deepEqual( arr, new Float64Array( 1 ) );
+		assert.strictEqual( arr.BYTES_PER_ELEMENT, 8 );
+
+		expected = new Float64Array( 1 );
+		for ( i = 0; i < arr.length; i++ ) {
+			assert.strictEqual( arr[ i ], expected[ i ] );
+		}
 
 		arr = array( 1, 'int8' );
 		assert.isTrue( arr instanceof Int8Array );
-		assert.deepEqual( arr, new Int8Array( 1 ) );
+		assert.strictEqual( arr.BYTES_PER_ELEMENT, 1 );
+
+		expected = new Int8Array( 1 );
+		for ( i = 0; i < arr.length; i++ ) {
+			assert.strictEqual( arr[ i ], expected[ i ] );
+		}
 	});
 
 	it( 'should cast an input array to a specified type', function test() {
