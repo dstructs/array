@@ -52,14 +52,22 @@ describe( 'dstructs-array', function tests() {
 
 	it( 'should fallback to polyfills if `class` is not supported', function test() {
 		var array = proxyquire( mpath, {
-			'./detect.js': detect
+			'./detect.js': detect,
+			'./polyfill.js': fcn,
+			'./polyfill.raw.js': raw
 		});
 
-		expect( array ).to.be.a( 'function' );
-		expect( array.raw ).to.be.a( 'function' );
+		assert.strictEqual( array(), 'beep' );
+		assert.strictEqual( array.raw(), 'boop' );
 
 		function detect() {
 			return false;
+		}
+		function fcn() {
+			return 'beep';
+		}
+		function raw() {
+			return 'boop';
 		}
 	});
 

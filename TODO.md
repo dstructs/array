@@ -28,4 +28,7 @@ TODO
 10. tests for individual files
 11. port methods from `matrix`
 12. update README
-13. 
+13. move `eval.js` to separate module
+	- 	`utils-eval`
+	- 	similar intent as `utils-platform`
+14. 
