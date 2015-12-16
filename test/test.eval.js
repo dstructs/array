@@ -4,7 +4,7 @@
 // MODULES //
 
 var chai = require( 'chai' );
-var evaluate = require( './../lib/eval.js' );
+var evil = require( './../lib/eval.js' );
 
 
 // VARIABLES //
@@ -17,7 +17,7 @@ var expect = chai.expect;
 describe( 'eval', function tests() {
 
 	it( 'should export a function', function test() {
-		expect( evaluate ).to.be.a( 'function' );
+		expect( evil ).to.be.a( 'function' );
 	});
 
 });
