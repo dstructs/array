@@ -10,4 +10,5 @@ TODO
 	-	would `length` be dynamic (`Array`) or fixed (`typed-array`)?
 4. `toString()`
 	-	consider using either `;` or `,` as the delimiter to distinguish between row and column vectors
-5. 
+5. handle generic `arrays` being pre-allocated with `>64K` elements
+6. 
