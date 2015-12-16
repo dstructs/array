@@ -1,15 +1,10 @@
 /* global require, describe, it */
 'use strict';
 
-var hasClassSupport = require( './../lib/detect.js' )();
-if ( !hasClassSupport ) {
-	return;
-}
-
 // MODULES //
 
 var chai = require( 'chai' );
-var array = require( './../lib/array.raw.js' );
+var array = require( './../lib/polyfill.raw.js' );
 
 
 // VARIABLES //
@@ -20,7 +15,9 @@ var assert = chai.assert;
 
 // TESTS //
 
-describe( 'array (raw)', function tests() {
+describe( 'array (raw polyfill)', function tests() {
+
+	var arr = array( 10, 'float32' );
 
 	it( 'should export a function', function test() {
 		expect( array ).to.be.a( 'function' );
@@ -98,6 +95,51 @@ describe( 'array (raw)', function tests() {
 		for ( i = 0; i < arr.length; i++ ) {
 			assert.strictEqual( arr[ i ], out[ i ] );
 		}
+	});
+
+	it( 'should create an array having setters' );
+
+	it( 'should create an array having getters' );
+
+	it( 'should create an array having a custom toString method', function test() {
+		assert.isFunction( arr.toString );
+	});
+
+	it( 'should create an array having a custom toJSON method', function test() {
+		assert.isFunction( arr.toJSON );
+	});
+
+	it( 'should create an array having a dtype property', function test() {
+		assert.isTrue( arr.hasOwnProperty( 'dtype' ) );
+		assert.isString( arr.dtype );
+	});
+
+	it( 'should create an array having a shape property', function test() {
+		assert.isTrue( arr.hasOwnProperty( 'shape' ) );
+		assert.isArray( arr.shape );
+	});
+
+	it( 'should create an array having a strides property', function test() {
+		assert.isTrue( arr.hasOwnProperty( 'strides' ) );
+		assert.isArray( arr.strides );
+		assert.deepEqual( arr.strides, [1,1] );
+	});
+
+	it( 'should create an array having an offset property', function test() {
+		assert.isTrue( arr.hasOwnProperty( 'offset' ) );
+		assert.isNumber( arr.offset );
+		assert.deepEqual( arr.offset, 0 );
+	});
+
+	it( 'should create an array having a ndims property', function test() {
+		assert.isTrue( arr.hasOwnProperty( 'ndims' ) );
+		assert.isNumber( arr.ndims );
+		assert.strictEqual( arr.ndims, 1 );
+	});
+
+	it( 'should create an array having a nbytes property', function test() {
+		assert.isTrue( arr.hasOwnProperty( 'nbytes' ) );
+		assert.isNumber( arr.nbytes );
 	});
 
 });

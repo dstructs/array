@@ -1,15 +1,10 @@
 /* global require, describe, it */
 'use strict';
 
-var hasClassSupport = require( './../lib/detect.js' )();
-if ( !hasClassSupport ) {
-	return;
-}
-
 // MODULES //
 
 var chai = require( 'chai' );
-var array = require( './../lib/array.js' );
+var array = require( './../lib/polyfill.js' );
 
 
 // VARIABLES //
@@ -20,7 +15,9 @@ var assert = chai.assert;
 
 // TESTS //
 
-describe( 'array', function tests() {
+describe( 'array (polyfill)', function tests() {
+
+	var arr = array( 10, 'uint32' );
 
 	it( 'should export a function', function test() {
 		expect( array ).to.be.a( 'function' );
@@ -197,6 +194,76 @@ describe( 'array', function tests() {
 
 		for ( i = 0; i < arr.length; i++ ) {
 			assert.strictEqual( arr[ i ], out[ i ] );
+		}
+	});
+
+	it( 'should return an array having setters' );
+
+	it( 'should return an array having getters' );
+
+	it( 'should create an array having a custom toString method', function test() {
+		assert.isFunction( arr.toString );
+	});
+
+	it( 'should create an array having a custom toJSON method', function test() {
+		assert.isFunction( arr.toJSON );
+	});
+
+	it( 'should create an array having a protected dtype property', function test() {
+		assert.isTrue( arr.hasOwnProperty( 'dtype' ) );
+		assert.isString( arr.dtype );
+
+		expect( foo ).to.throw( Error );
+		function foo() {
+			arr.dtype = 'beep';
+		}
+	});
+
+	it( 'should create an array having a protected shape property', function test() {
+		assert.isTrue( arr.hasOwnProperty( 'shape' ) );
+		assert.isArray( arr.shape );
+
+		expect( foo ).to.throw( Error );
+		function foo() {
+			arr.shape = [ 4, 5 ];
+		}
+	});
+
+	it( 'should create an array having a protected strides property', function test() {
+		assert.isTrue( arr.hasOwnProperty( 'strides' ) );
+		assert.isArray( arr.strides );
+		assert.deepEqual( arr.strides, [1,1] );
+
+		expect( foo ).to.throw( Error );
+		function foo() {
+			arr.strides = [ -4, 1 ];
+		}
+	});
+
+	it( 'should create an array having an offset property', function test() {
+		assert.isTrue( arr.hasOwnProperty( 'offset' ) );
+		assert.isNumber( arr.offset );
+		assert.deepEqual( arr.offset, 0 );
+	});
+
+	it( 'should create an array having a protected ndims property', function test() {
+		assert.isTrue( arr.hasOwnProperty( 'ndims' ) );
+		assert.isNumber( arr.ndims );
+		assert.strictEqual( arr.ndims, 1 );
+
+		expect( foo ).to.throw( Error );
+		function foo() {
+			arr.ndims = NaN;
+		}
+	});
+
+	it( 'should create an array having a protected nbytes property', function test() {
+		assert.isTrue( arr.hasOwnProperty( 'nbytes' ) );
+		assert.isNumber( arr.nbytes );
+
+		expect( foo ).to.throw( Error );
+		function foo() {
+			arr.nbytes = NaN;
 		}
 	});
 
