@@ -10,7 +10,7 @@ var array;
 if ( hasClassSupport ) {
 	array = require( './../lib/array.js' );
 } else {
-	array = require( './../polyfill.js' );
+	array = require( './../lib/polyfill.js' );
 }
 
 
