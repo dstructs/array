@@ -38,7 +38,7 @@ describe( 'array#toString', function tests() {
 		assert.strictEqual( actual, expected );
 
 		// Full array:
-		data = new Float32Array( 6 );
+		data = new Array( 6 );
 		for ( i = 0; i < data.length; i++ ) {
 			data[ i ] = i * 2;
 		}
@@ -67,7 +67,7 @@ describe( 'array#toString', function tests() {
 		assert.strictEqual( actual, expected );
 
 		// Full array:
-		data = new Float32Array( 6 );
+		data = new Array( 6 );
 		for ( i = 0; i < data.length; i++ ) {
 			data[ i ] = i * 2;
 		}
