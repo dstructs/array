@@ -12,4 +12,10 @@ TODO
 	-	consider using either `;` or `,` as the delimiter to distinguish between row and column vectors
 5. handle generic `arrays` being pre-allocated with `>64K` elements
 6. instead of `DataArray`, consider `Vector`
-7. 
+7. add a `get nbytes()` method to generic `array`
+	-	check if all elements are `numeric`
+		-	if so, assume `8bytes`
+		-	else `null`
+	-	note: cannot guarantee an `integer` array is stored using 32-bit `integers`.
+	-	a note should be included in the README that, for generic `arrays`, `nbytes` is an estimate, not truth
+8. 
