@@ -25,7 +25,7 @@ TODO
 9. add raw and non-raw constructors to main export
 	-	maybe (?)
 	-	only if `class` support
-10. tests for individual files
+10. 
 11. port methods from `matrix`
 12. update README
 13. move `eval.js` to separate module
