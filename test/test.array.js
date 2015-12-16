@@ -4,7 +4,14 @@
 // MODULES //
 
 var chai = require( 'chai' );
-var array = require( './../lib/array.js' );
+var hasClassSupport = require( './../lib/detect.js' )();
+
+var array;
+if ( hasClassSupport ) {
+	array = require( './../lib/array.js' );
+} else {
+	array = require( './../polyfill.js' );
+}
 
 
 // VARIABLES //
