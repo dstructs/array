@@ -10,6 +10,7 @@ var array;
 if ( hasClassSupport ) {
 	array = require( './../lib/array.raw.js' );
 } else {
+	// FIXME: just return. Polyfill should be tested on all platforms
 	array = require( './../lib/polyfill.raw.js' );
 }
 
