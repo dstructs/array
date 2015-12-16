@@ -18,4 +18,8 @@ TODO
 		-	else `null`
 	-	note: cannot guarantee an `integer` array is stored using 32-bit `integers`.
 	-	a note should be included in the README that, for generic `arrays`, `nbytes` is an estimate, not truth
-8. 
+8. how would a user specify a row versus a column vector?
+	-	internally, we would just update the shape `array`
+	-	is this important? needed? Probably not computationally. Just for output (?).
+	-	maybe allow an input parameter to `toString()` / pretty-print to show as row or column vector
+9. 
