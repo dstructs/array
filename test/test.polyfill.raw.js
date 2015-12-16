@@ -80,7 +80,7 @@ describe( 'array (raw polyfill)', function tests() {
 		}
 	});
 
-	it( 'should cast a plain array to a float64', function test() {
+	it( 'should cast a plain array to a float64 array', function test() {
 		var out;
 		var arr;
 		var i;
@@ -95,6 +95,18 @@ describe( 'array (raw polyfill)', function tests() {
 		for ( i = 0; i < arr.length; i++ ) {
 			assert.strictEqual( arr[ i ], out[ i ] );
 		}
+	});
+
+	it( 'should not require a `new` operator', function test() {
+		var A;
+		var B;
+
+		A = array( 10, 'float32' );
+		B = new array( 10, 'float32' );
+
+		assert.isTrue( A instanceof Float32Array );
+
+		assert.isTrue( B instanceof Float32Array );
 	});
 
 	it( 'should create an array having setters' );
