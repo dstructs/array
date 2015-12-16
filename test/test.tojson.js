@@ -29,13 +29,12 @@ describe( 'array#toJSON', function tests() {
 		var arr;
 		var i;
 
-		// Zero-filled array:
-		arr = array( 10, 'int8' );
-
-		actual = arr.toJSON();
+		// Generic array:
+		arr = array( [0,0,0,0,0,0,0,0,0,0], 'generic' );
+		actual = toJSON.call( arr );
 		expected = {
-			'type': 'Int8Array',
-			'dtype': 'int8',
+			'type': 'Array',
+			'dtype': 'generic',
 			'shape': [10,1],
 			'offset': 0,
 			'strides': [1,1],
@@ -45,7 +44,7 @@ describe( 'array#toJSON', function tests() {
 
 		assert.deepEqual( actual, expected );
 
-		// Full array:
+		// Typed array:
 		data = new Array( 6 );
 		for ( i = 0; i < data.length; i++ ) {
 			data[ i ] = i * 2;
@@ -53,7 +52,7 @@ describe( 'array#toJSON', function tests() {
 
 		arr = array( data, 'float32' );
 
-		actual = arr.toJSON();
+		actual = toJSON.call( arr );
 		expected = {
 			'type': 'Float32Array',
 			'dtype': 'float32',
@@ -77,7 +76,7 @@ describe( 'array#toJSON', function tests() {
 		// Zero-filled array:
 		arr = array.raw( 10, 'int8' );
 
-		actual = arr.toJSON();
+		actual = toJSON.call( arr );
 		expected = {
 			'type': 'Int8Array',
 			'dtype': 'int8',
@@ -98,7 +97,7 @@ describe( 'array#toJSON', function tests() {
 
 		arr = array.raw( data, 'float32' );
 
-		actual = arr.toJSON();
+		actual = toJSON.call( arr );
 		expected = {
 			'type': 'Float32Array',
 			'dtype': 'float32',
@@ -117,7 +116,7 @@ describe( 'array#toJSON', function tests() {
 		var arr;
 
 		arr = array( 10, 'int8' );
-		json = arr.toJSON();
+		json = toJSON.call( arr );
 
 		assert.deepEqual( arr.dtype, json.dtype );
 		assert.deepEqual( arr.shape, json. shape );

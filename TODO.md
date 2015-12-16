@@ -31,4 +31,6 @@ TODO
 13. move `eval.js` to separate module
 	- 	`utils-eval`
 	- 	similar intent as `utils-platform`
-14. 
+14. should empty generic `arrays` be zero-filled?
+	-	necessary for >64K elements
+15. 

@@ -25,27 +25,20 @@ describe( 'array#toString', function tests() {
 	it( 'should convert an array to a string', function test() {
 		var expected;
 		var actual;
-		var data;
 		var arr;
-		var i;
 
-		// Zero-filled array:
-		arr = array( 10, 'int8' );
+		// Generic array:
+		arr = array( [1,2,3,4,5], 'generic' );
 
-		actual = arr.toString();
-		expected = '0,0,0,0,0,0,0,0,0,0';
+		actual = toString.call( arr );
+		expected = '1,2,3,4,5';
 
 		assert.strictEqual( actual, expected );
 
-		// Full array:
-		data = new Array( 6 );
-		for ( i = 0; i < data.length; i++ ) {
-			data[ i ] = i * 2;
-		}
+		// Typed array:
+		arr = array( [0,2,4,6,8,10], 'float32' );
 
-		arr = array( data, 'float32' );
-
-		actual = arr.toString();
+		actual = toString.call( arr );
 		expected = '0,2,4,6,8,10';
 
 		assert.strictEqual( actual, expected );
@@ -54,27 +47,20 @@ describe( 'array#toString', function tests() {
 	it( 'should convert a raw array to a string', function test() {
 		var expected;
 		var actual;
-		var data;
 		var arr;
-		var i;
 
-		// Zero-filled array:
-		arr = array.raw( 10, 'int8' );
+		// Generic array:
+		arr = array.raw( [1,2,3,4,5], 'generic' );
 
-		actual = arr.toString();
-		expected = '0,0,0,0,0,0,0,0,0,0';
+		actual = toString.call( arr );
+		expected = '1,2,3,4,5';
 
 		assert.strictEqual( actual, expected );
 
-		// Full array:
-		data = new Array( 6 );
-		for ( i = 0; i < data.length; i++ ) {
-			data[ i ] = i * 2;
-		}
+		// Typed array:
+		arr = array.raw( [0,2,4,6,8,10], 'float32' );
 
-		arr = array.raw( data, 'float32' );
-
-		actual = arr.toString();
+		actual = toString.call( arr );
 		expected = '0,2,4,6,8,10';
 
 		assert.strictEqual( actual, expected );
