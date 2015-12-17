@@ -26,7 +26,7 @@ TODO
 	-	maybe (?)
 	-	only if `class` support
 10. 
-11. port methods from `matrix`
+11. 
 12. update README
 13. move `eval.js` to separate module
 	- 	`utils-eval`
