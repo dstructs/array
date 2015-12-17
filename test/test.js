@@ -7,7 +7,7 @@ var mpath = './../lib';
 // MODULES //
 
 var chai = require( 'chai' );
-var proxyquire = require( 'proxyquire' );
+var proxyquire = require( 'proxyquire' ).noCallThru();
 var array = require( mpath );
 
 
