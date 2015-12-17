@@ -23,6 +23,7 @@ describe( 'create', function tests() {
 
 	it( 'should return a string', function test() {
 		assert.isString( create( 'Array', 'generic', true ) );
+		assert.isString( create( 'Int8Array', 'generic', false ) );
 	});
 
 });
