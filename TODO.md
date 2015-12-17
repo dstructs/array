@@ -25,7 +25,9 @@ TODO
 9. add raw and non-raw constructors to main export
 	-	maybe (?)
 	-	only if `class` support
-10. 
+10. add tests for generic array and `shape` and `nbytes` setters
+	-	test validation
+	-	test `nbytes` getter when numeric `array`
 11. 
 12. update README
 13. move `eval.js` to separate module
