@@ -2,8 +2,7 @@ TODO
 ====
 
 1. Consider extending the api to match some of the `matrix` methods
-2. move check for native class support to separate module
-	-	`is-class-supported`
+2. 
 3. allow `Object` as a constructor name
 	-	would allow creating a "sparse" vector
 	-	need to create a `length` property
@@ -30,9 +29,8 @@ TODO
 	-	test `nbytes` getter when numeric `array`
 11. 
 12. update README
-13. move `eval.js` to separate module
-	- 	`utils-eval`
-	- 	similar intent as `utils-platform`
+13. 
 14. should empty generic `arrays` be zero-filled?
 	-	necessary for >64K elements
+	-	yes, as would then standardize typed and generic arrays
 15. 

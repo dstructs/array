@@ -31,7 +31,7 @@ describe( 'dstructs-array', function tests() {
 
 	it( 'should use classes when classes are supported', function test() {
 		var array = proxyquire( mpath, {
-			'./detect.js': detect,
+			'detect-class-support': detect,
 			'./array.js': fcn,
 			'./array.raw.js': raw
 		});
@@ -52,7 +52,7 @@ describe( 'dstructs-array', function tests() {
 
 	it( 'should fallback to polyfills if `class` is not supported', function test() {
 		var array = proxyquire( mpath, {
-			'./detect.js': detect,
+			'detect-class-support': detect,
 			'./polyfill.js': fcn,
 			'./polyfill.raw.js': raw
 		});

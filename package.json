@@ -44,6 +44,7 @@
     "url": "https://github.com/dstructs/array/issues"
   },
   "dependencies": {
+    "detect-class-support": "^1.0.0",
     "dstructs-array-constructors": "^1.0.2",
     "dstructs-array-dtype": "^1.0.2",
     "dstructs-cast-arrays": "^1.0.3",

@@ -1,7 +1,7 @@
 /* global require, describe, it */
 'use strict';
 
-var hasClassSupport = require( './../lib/detect.js' )();
+var hasClassSupport = require( 'detect-class-support' )();
 if ( !hasClassSupport ) {
 	return;
 }
